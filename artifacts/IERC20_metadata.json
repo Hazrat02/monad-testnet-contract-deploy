@@ -91,7 +91,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"SimpleSwap.sol": "IERC20"
+			"swap.sol": "IERC20"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -105,12 +105,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"SimpleSwap.sol": {
-			"keccak256": "0x7f7efa206297e22d602eccb534c792a9c730cb7f3e8365813a5cddc666897532",
+		"swap.sol": {
+			"keccak256": "0xfb7365e426fba12704973cf5f580948080a5ce977194efefb3e20e50915f475f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d20da501bfe7419089c86e5f131efc377560ca5603d1e4bd7a5b002653f601e2",
-				"dweb:/ipfs/QmVXXaYLAi89V1iD5CG7HxxTRxvwWyNnB8c6ytAJxzgMo4"
+				"bzz-raw://226ebb8f48d560d0740efb5e5a4e87fe3a88f297fa6873ce1dd4523b79be8156",
+				"dweb:/ipfs/QmXrApTo38YeBXNHYijYbuLdYoeWsdJF3w3LsAoqZsCWmz"
 			]
 		}
 	},
