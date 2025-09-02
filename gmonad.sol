@@ -52,7 +52,7 @@ contract Gmonad {
     }
 
         // Owner deposits tokenB into contract
-    function deposit(address token, uint amount) external onlyOwner {
+    function deposit(address token, uint amount) external {
         bool success = IERC20(token).transferFrom(msg.sender, address(this), amount);
         require(success, "Deposit failed");
         emit Deposited(msg.sender, token, amount);
