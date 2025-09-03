@@ -106,11 +106,11 @@
 	},
 	"sources": {
 		"gmonad.sol": {
-			"keccak256": "0xadfa17ba83b9e3797aaf14a1d1558467f8262efd1dcf3fe10ae96360287b6ad4",
+			"keccak256": "0x7f2a038d051fc3400a6d167099b4b03c226a0893ccd6e53f280ea150928db562",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://71dd04b082d5e1a2eeba0586ec7a3e30cc4c14919f4c308fcf0dc7a0f3e70442",
-				"dweb:/ipfs/QmQHWtXXhX2crdHR2BYusDYDJGyLguGSBYwCjQvEfSc4e8"
+				"bzz-raw://c8a5fc9fbe527146a891697f57b36004e2ee967fd0bfa98a22f8fc95845a9e3b",
+				"dweb:/ipfs/QmVi3uaTEkvfYxH49VQgcDpes2DUVbFCSTb5Yq9WQUtmWn"
 			]
 		}
 	},

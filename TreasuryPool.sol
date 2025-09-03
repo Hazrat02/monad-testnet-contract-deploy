@@ -180,7 +180,9 @@ contract Gmonad {
             balances[i] = IERC20(token).balanceOf(address(this));
         }
     }
-      function getContractBalance(address _token) external view returns (uint256) {
+
+    
+    function getContractBalance(address _token) external view returns (uint256) {
         uint8 decimals = IERC20Metadata(_token).decimals();
         return totalTokenBalance[_token] / (10 ** decimals);
     }
