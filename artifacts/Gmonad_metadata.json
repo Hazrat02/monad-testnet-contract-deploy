@@ -276,6 +276,36 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenB",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "swapOne",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "swapWmon",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
@@ -410,11 +440,11 @@
 			]
 		},
 		"TreasuryPool.sol": {
-			"keccak256": "0x37b84d261881704fa3feb5e50ef22d871f996f50603d2586fed2d48ea0d3bd8a",
+			"keccak256": "0x519f27e69141c07ce48dcf55984c9145396ba3c30d3b8e5cc4c229d7a8ab7947",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6e8f91e1fa6733d336c223518236a7ceb029f2ee67a32418b13d6d4cf7e422b2",
-				"dweb:/ipfs/QmWuMigGcjSPSTWMNqU74rqnXYsWFQoRSHSF28DN7e5DNW"
+				"bzz-raw://ae22144525e5b4158e8cb0810c2250bb6ed032f03e87a1664c322ec17da046d4",
+				"dweb:/ipfs/QmPmRngfv6h8FFezh9k2jESTCPi72HCoPLxGx5nrRpcyxN"
 			]
 		}
 	},

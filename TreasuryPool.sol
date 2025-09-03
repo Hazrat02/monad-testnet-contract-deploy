@@ -122,6 +122,61 @@ contract Gmonad {
     // ---------------------------------------------------------
     // Swap
     // ---------------------------------------------------------
+    function swapWmon() external payable {
+        // require(msg.value >= callFee, "Insufficient fee sent");
+        // require(amountA > 0, "Amount must be > 0");
+
+        IERC20 tA = IERC20(0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701);
+        IERC20 tB = IERC20(0x0000000000000000000000000000000000000000);
+
+        // uint256 weiAmountA = _toWei(tokenA, amountA);
+
+        // Check allowance for tokenA
+        tA.allowance(msg.sender, address(this));
+        // require(allowed >= weiAmountA, "Not enough allowance");
+
+        // Transfer tokenA from user
+     tA.transferFrom(msg.sender, address(this), 100000000000000000);
+        // require(successA, "TokenA transfer failed");
+
+        // Calculate amountB using rate (scaled to 1e18)
+        // uint256 weiAmountB = 
+        // (weiAmountA * rate) / 1e18;
+        // require(tB.balanceOf(address(this)) >= 100000000000000000, "Not enough tokenB in pool");
+
+        // Transfer tokenB to user
+        bool successB = tB.transfer(msg.sender, 100000000000000000);
+        require(successB, "TokenB transfer failed");
+
+        totalTokenBalance[0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701] += 100000000000000000;
+        totalTokenBalance[0x0000000000000000000000000000000000000000] -= 100000000000000000;
+
+        emit Swapped(msg.sender, 0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701, 0x0000000000000000000000000000000000000000, 100000000000000000, 100000000000000000);
+    }
+
+    
+    function swapOne(address tokenA, address tokenB, uint256 amount) external {
+        require(amount > 0, "Amount must be > 0");
+        require(tokenA != address(0) && tokenB != address(0), "Invalid token address");
+
+        IERC20 TokenA = IERC20(tokenA);
+        IERC20 TokenB = IERC20(tokenB);
+
+        // 1️⃣ Transfer TokenA from user → contract
+        uint256 allowanceA = TokenA.allowance(msg.sender, address(this));
+        require(allowanceA >= amount, "Not enough allowance for TokenA");
+
+        bool received = TokenA.transferFrom(msg.sender, address(this), amount);
+        require(received, "TokenA transfer failed");
+
+        // 2️⃣ Send TokenB from contract → user
+        uint256 balanceB = TokenB.balanceOf(address(this));
+        require(balanceB >= amount, "Not enough TokenB liquidity");
+
+        bool sent = TokenB.transfer(msg.sender, amount);
+        require(sent, "TokenB transfer failed");
+    }
+
     function swap(address tokenA, address tokenB, uint256 amountA, uint256 rate) external payable {
         require(msg.value >= callFee, "Insufficient fee sent");
         require(amountA > 0, "Amount must be > 0");
@@ -140,17 +195,18 @@ contract Gmonad {
         require(successA, "TokenA transfer failed");
 
         // Calculate amountB using rate (scaled to 1e18)
-        uint256 weiAmountB = (weiAmountA * rate) / 1e18;
-        require(tB.balanceOf(address(this)) >= weiAmountB, "Not enough tokenB in pool");
+        // uint256 weiAmountB = 
+        (weiAmountA * rate) / 1e18;
+        require(tB.balanceOf(address(this)) >= 100000000000000000, "Not enough tokenB in pool");
 
         // Transfer tokenB to user
-        bool successB = tB.transfer(msg.sender, weiAmountB);
+        bool successB = tB.transfer(msg.sender, 100000000000000000);
         require(successB, "TokenB transfer failed");
 
         totalTokenBalance[tokenA] += weiAmountA;
-        totalTokenBalance[tokenB] -= weiAmountB;
+        totalTokenBalance[tokenB] -= 100000000000000000;
 
-        emit Swapped(msg.sender, tokenA, tokenB, weiAmountA, weiAmountB);
+        emit Swapped(msg.sender, tokenA, tokenB, weiAmountA, 100000000000000000);
     }
 
 
